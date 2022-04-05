@@ -4,7 +4,7 @@ import csv
 
 
 #Set CSV path
-csvpath = os.path.join('..','python-challenge','budget_data.csv')
+csvpath = os.path.join('..','HW_Python','python-challenge','budget_data.csv')
 
 #Variables
 
