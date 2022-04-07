@@ -67,7 +67,7 @@ print(f"Greatest Increase in Profits:, {profit_month}, (${highest})")
 print(f"Greatest Decrease in Profits:,{lost_month}, (${lowest})")
 
 #Export analysis
-export_analysis = os.path.join('.','Reso', 'exported_data.text')
+export_analysis = os.path.join('.','Reso', 'exported_analysis.text')
 
 #Use 'Write" mode to open the file
 with open(export_analysis, 'w',) as txtfile:
