@@ -4,7 +4,7 @@ import csv
 
 
 #Set CSV path
-csvpath = os.path.join('resources','budget_data.csv')
+csvpath = os.path.join('.', 'Reso', 'budget_data.csv')
 
 #Variables
 
@@ -19,7 +19,7 @@ lost_month = 0
 
 #Read CSV
 with open(csvpath, newline='') as csvfile:
-    csvreader = csv.reader(csvfile, deliomiter=',')
+    csvreader = csv.reader(csvfile, delimiter=',')
     #read the header if no header skip it
     csv_header = next(csvreader)
     row = next(csvreader)
@@ -60,8 +60,24 @@ with open(csvpath, newline='') as csvfile:
 # Print analysis
 print("Financial Analysis")
 print("------------------------")
-print("Total Months: {total_months}")
-print("Total: $ {total_amount}")
-print("Average Change: $ {average_change:.2f}")
-print("Greatest Increase in Profits:, {profit_month}, (${highest})")
-print("Greatest Decrease in Profits:,{lost_month}, (${lowest})")
+print(f"Total Months: {total_months}")
+print(f"Total: $ {total_amount}")
+print(f"Average Change: $ {average_change:.2f}")
+print(f"Greatest Increase in Profits:, {profit_month}, (${highest})")
+print(f"Greatest Decrease in Profits:,{lost_month}, (${lowest})")
+
+#Export analysis
+export_analysis = os.path.join('.','Reso', 'exported_data.text')
+
+#Use 'Write" mode to open the file
+with open(export_analysis, 'w',) as txtfile:
+    
+    txtfile.write("Financial Analysis")
+    txtfile.write("------------------------")
+    txtfile.write(f"Total Months: {total_months}")
+    txtfile.write(f"Total: $ {total_amount}")
+    txtfile.write(f"Average Change: $ {average_change:.2f}")
+    txtfile.write(f"Greatest Increase in Profits:, {profit_month}, (${highest})")
+    txtfile.write(f"Greatest Decrease in Profits:,{lost_month}, (${lowest})")
+    
+
